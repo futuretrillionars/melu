@@ -1,63 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Checkout</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | MELU</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 <style>
-body { font-family: Arial; background:#f5f5f5; margin:0; padding:20px; }
-
-.box {
-  max-width:600px;
-  margin:auto;
-  background:white;
-  padding:20px;
-  border-radius:10px;
-}
-
-.item { display:flex; justify-content:space-between; margin:10px 0; }
-
-button {
-  width:100%;
-  padding:12px;
-  background:black;
-  color:white;
-  border:none;
-  margin-top:20px;
-  cursor:pointer;
+body {
+  background: #050505;
+  color: white;
 }
 </style>
 </head>
 
-<body>
+<body class="p-6 md:p-12">
 
-<div class="box">
-  <h2>Checkout</h2>
-  <div id="items"></div>
-  <h3 id="total"></h3>
+<h1 class="text-3xl mb-10">Your Cart</h1>
 
-  <button onclick="pay()">Pay Now</button>
+<div id="cartItems" class="space-y-6"></div>
+
+<div class="mt-10 border-t pt-6">
+  <div class="flex justify-between text-xl mb-6">
+    <span>Total</span>
+    <span id="cartTotal">$0</span>
+  </div>
+
+  <button onclick="checkout()" class="w-full bg-white text-black py-4">
+    Place Order
+  </button>
 </div>
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let itemsBox = document.getElementById("items");
-let total = 0;
+function renderCart() {
+    const container = document.getElementById("cartItems");
+    const totalEl = document.getElementById("cartTotal");
 
-cart.forEach(i => {
-  total += i.price * i.qty;
-  itemsBox.innerHTML += `
-    <div class="item">
-      <span>${i.name} x ${i.qty}</span>
-      <span>$${i.price * i.qty}</span>
-    </div>
-  `;
-});
+    container.innerHTML = "";
+    let total = 0;
 
-document.getElementById("total").innerText = "Total: $" + total;
+    cart.forEach((item, index) => {
+        const price = parseFloat(item.price.replace("$",""));
+        total += price * item.qty;
 
-function pay(){
-  alert("Stripe will be connected here next step 💳");
+        container.innerHTML += `
+        <div class="border-b pb-4">
+            <img src="${item.img}" class="h-40 w-full object-cover mb-4">
+
+            <h2 class="text-xl">${item.title}</h2>
+            <p class="opacity-60">${item.price}</p>
+
+            <div class="flex justify-between items-center mt-4">
+                <div class="flex gap-3 items-center">
+                    <button onclick="changeQty(${index}, -1)" class="px-3 bg-gray-700">-</button>
+                    <span>${item.qty}</span>
+                    <button onclick="changeQty(${index}, 1)" class="px-3 bg-gray-700">+</button>
+                </div>
+
+                <button onclick="removeItem(${index})" class="text-red-400">
+                    Remove
+                </button>
+            </div>
+        </div>
+        `;
+    });
+
+    totalEl.innerText = "$" + total;
 }
+
+function changeQty(i, change) {
+    cart[i].qty += change;
+
+    if (cart[i].qty <= 0) {
+        cart.splice(i, 1);
+    }
+
+    update();
+}
+
+function removeItem(i) {
+    cart.splice(i, 1);
+    update();
+}
+
+function update() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Cart is empty");
+        return;
+    }
+
+    let msg = "New Order:\n\n";
+
+    cart.forEach(item => {
+        msg += `${item.title} x${item.qty} - ${item.price}\n`;
+    });
+
+    msg += "\nSend Name, Phone, Address.";
+
+    alert(msg);
+
+    localStorage.removeItem("cart");
+    cart = [];
+    renderCart();
+}
+
+renderCart();
 </script>
 
 </body>
