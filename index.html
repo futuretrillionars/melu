@@ -414,7 +414,10 @@ let currentProduct = {};
 }
 
 function updateCartUI() {
-    document.getElementById("cartCount").innerText = cart.length;
+   const countEl = document.getElementById("cartCount");
+if (countEl) {
+    countEl.innerText = cart.length;
+}
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
@@ -438,6 +441,12 @@ function addToCart() {
     closeModal();
 
     const cartIcon = document.getElementById("cartIcon");
+    if (cartIcon) {
+    cartIcon.style.transform = "scale(1.2)";
+    setTimeout(() => {
+        cartIcon.style.transform = "scale(1)";
+    }, 200);
+}
 
     cartIcon.style.transform = "scale(1.2)";
 
