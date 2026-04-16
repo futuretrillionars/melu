@@ -8,20 +8,53 @@
 
 <body class="bg-black text-white p-10">
 
-<div id="product"></div>
+<div class="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto mt-20">
 
-<button onclick="addToCart()" class="mt-6 bg-white text-black px-6 py-3">
-  Add to Cart
-</button>
+  <!-- IMAGE -->
+  <div>
+    <img id="productImg" class="w-full object-cover rounded-lg">
+  </div>
+
+  <!-- DETAILS -->
+  <div class="space-y-6">
+
+    <h1 id="productTitle" class="text-3xl tracking-wide font-light"></h1>
+
+    <p id="productPrice" class="text-xl text-gray-300"></p>
+
+    <p class="text-gray-400 leading-relaxed">
+      Handcrafted Ethiopian garment blending heritage with modern luxury.
+      Designed for comfort, elegance, and timeless style.
+    </p>
+
+    <!-- SIZE -->
+    <div>
+      <p class="text-sm text-gray-400 mb-3 tracking-widest">SIZE</p>
+
+      <div class="flex gap-3">
+        <button class="size-btn border px-4 py-2">S</button>
+        <button class="size-btn border px-4 py-2">M</button>
+        <button class="size-btn border px-4 py-2">L</button>
+        <button class="size-btn border px-4 py-2">XL</button>
+      </div>
+    </div>
+
+    <!-- ADD BUTTON -->
+    <button onclick="addToCart()"
+      class="w-full border border-white py-4 tracking-widest hover:bg-white hover:text-black transition">
+      ADD TO BAG
+    </button>
+
+  </div>
+
+</div>
 
 <script>
 let product = JSON.parse(localStorage.getItem("selectedProduct"));
 
-document.getElementById("product").innerHTML = `
-  <img src="${product.img}" class="w-full max-w-md mb-6">
-  <h1 class="text-3xl">${product.title}</h1>
-  <p class="text-gray-400">${product.price}</p>
-`;
+document.getElementById("productImg").src = product.img;
+document.getElementById("productTitle").innerText = product.title;
+document.getElementById("productPrice").innerText = product.price;
 
 function addToCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
