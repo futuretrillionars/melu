@@ -397,6 +397,21 @@
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let currentProduct = {};
+    function addToCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+        img: currentProduct.img,
+        title: currentProduct.title,
+        price: currentProduct.price,
+        qty: 1
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartUI();
+    closeModal();
+}
 
 function updateCartUI() {
     document.getElementById("cartCount").innerText = cart.length;
@@ -440,7 +455,7 @@ function attachShopClicks() {
         item.addEventListener("click", () => {
             const img = item.querySelector("img")?.src;
             const title = item.querySelector("h3")?.innerText;
-            const price = item.querySelector("p")?.innerText;
+          const price = item.querySelector("p")?.innerText?.trim() || "$0";
 
             if (img && title && price) {
                 openModal(img, title, price);
