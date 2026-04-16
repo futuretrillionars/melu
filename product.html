@@ -51,19 +51,44 @@
 
 <script>
 let product = JSON.parse(localStorage.getItem("selectedProduct"));
+  let selectedSize = null;
 
 document.getElementById("productImg").src = product.img;
 document.getElementById("productTitle").innerText = product.title;
 document.getElementById("productPrice").innerText = product.price;
+  document.querySelectorAll(".size-btn").forEach(button => {
+  button.onclick = () => {
+
+    // remove highlight from all buttons
+    document.querySelectorAll(".size-btn").forEach(b => {
+      b.style.background = "";
+      b.style.color = "";
+    });
+
+    // highlight clicked button
+    button.style.background = "white";
+    button.style.color = "black";
+
+    // remember size
+    selectedSize = button.innerText;
+  };
+});
 
 function addToCart() {
+
+  if (!selectedSize) {
+    alert("Please select a size");
+    return;
+  }
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
     img: product.img,
     title: product.title,
     price: product.price,
-    qty: 1
+    qty: 1,
+    size: selectedSize
   });
 
   localStorage.setItem("cart", JSON.stringify(cart));
