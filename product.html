@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-black text-white p-10">
+
+<div id="product"></div>
+
+<button onclick="addToCart()" class="mt-6 bg-white text-black px-6 py-3">
+  Add to Cart
+</button>
+
+<script>
+let product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+document.getElementById("product").innerHTML = `
+  <img src="${product.img}" class="w-full max-w-md mb-6">
+  <h1 class="text-3xl">${product.title}</h1>
+  <p class="text-gray-400">${product.price}</p>
+`;
+
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    img: product.img,
+    title: product.title,
+    price: product.price,
+    qty: 1
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart");
+}
+</script>
+
+</body>
+</html>
