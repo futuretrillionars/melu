@@ -30,21 +30,34 @@ body {
   Complimentary delivery on all Ethiopian orders over $100
 </p>
 
-<div id="cartItems" class="space-y-6"></div>
+<div id="cartItems" class="space-y-10"></div>
 
-<div class="mt-10 border-t pt-6">
-  <div class="flex justify-between text-xl mb-6">
-    <span>Total</span>
-    <span id="cartTotal">$0.00</span>
+<div class="mt-16 border-t border-gray-800 pt-10">
+
+  <!-- FORM -->
+  <div class="space-y-6 mb-10 max-w-md">
+    <input id="name" placeholder="Full Name"
+      class="w-full bg-transparent border-b border-gray-600 py-3 focus:outline-none focus:border-white">
+
+    <input id="phone" placeholder="Phone Number"
+      class="w-full bg-transparent border-b border-gray-600 py-3 focus:outline-none focus:border-white">
+
+    <input id="address" placeholder="Delivery Address"
+      class="w-full bg-transparent border-b border-gray-600 py-3 focus:outline-none focus:border-white">
   </div>
-<div class="mt-8 space-y-4">
-  <input id="name" placeholder="Full Name" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
-  <input id="phone" placeholder="Phone Number" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
-  <input id="address" placeholder="Delivery Address" class="w-full p-3 bg-gray-900 border border-gray-700 rounded">
-</div>
-  <button onclick="checkout()" class="w-full bg-white text-black py-4 font-bold">
-    Place Order
+
+  <!-- TOTAL -->
+  <div class="flex justify-between items-center text-2xl mb-8">
+    <span class="tracking-widest">TOTAL</span>
+    <span id="cartTotal" class="font-light">$0.00</span>
+  </div>
+
+  <!-- BUTTON -->
+  <button onclick="checkout()"
+    class="w-full border border-white py-4 tracking-widest hover:bg-white hover:text-black transition duration-300">
+    SECURE CHECKOUT
   </button>
+
 </div>
 
 <script>
@@ -71,7 +84,15 @@ function renderCart() {
     let total = 0;
 
     if (!cart.length) {
-        container.innerHTML = `<p class="opacity-60">Your cart is empty</p>`;
+        container.innerHTML = `
+<div class="text-center mt-20 space-y-4">
+  <p class="text-2xl tracking-widest">YOUR BAG IS EMPTY</p>
+  <p class="text-gray-500">Explore our latest pieces and find something exceptional.</p>
+  <a href="index.html" class="inline-block mt-4 border border-white px-6 py-3 tracking-widest hover:bg-white hover:text-black transition">
+    CONTINUE SHOPPING
+  </a>
+</div>
+`;
         totalEl.innerText = "$0.00";
         return;
     }
