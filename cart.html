@@ -129,18 +129,33 @@ function checkout() {
         return;
     }
 
-    let msg = "New Order:\n\n";
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+
+    if (!name || !phone || !address) {
+        alert("Fill all details");
+        return;
+    }
+
+    let msg = `🛒 NEW ORDER\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n`;
 
     cart.forEach(item => {
         const price = getPrice(item);
         const qty = item.qty || 1;
 
-        msg += `${item.title} x${qty} - $${price}\n`;
+        msg += `- ${item.title} x${qty} = $${price * qty}\n`;
     });
 
-    msg += "\nSend Name, Phone, Address.";
+    let total = cart.reduce((sum, item) => {
+        return sum + getPrice(item) * (item.qty || 1);
+    }, 0);
 
-    alert(msg);
+    msg += `\nTOTAL: $${total.toFixed(2)}`;
+
+    let phoneNumber = "251911001122"; // change this
+
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`);
 
     localStorage.removeItem("cart");
     cart = [];
