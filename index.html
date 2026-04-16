@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MELU | Haute Couture Ethiopian Heritage</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: #ffffff;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        
+        .gold-text { color: #d4af37; }
+        .gold-border { border-color: #d4af37; }
+        .bg-gold { background-color: #d4af37; }
+        
+        .section-spacing { padding: 160px 0; }
+        .letter-spacing-xl { letter-spacing: 0.5em; }
+
+        /* Custom underline animation for links */
+        .link-under { position: relative; }
+        .link-under::after {
+            content: ''; position: absolute; width: 0; height: 1px;
+            bottom: -4px; left: 0; background-color: #d4af37;
+            transition: width 0.4s ease;
+        }
+        .link-under:hover::after { width: 100%; }
+
+        /* Reveal Animation Utility */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; }
+        section {
+  scroll-margin-top: 120px;
+}
+#cartIcon {
+    transition: transform 0.2s ease;
+}
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 flex justify-between items-center px-12 py-6 bg-black/90 backdrop-blur-xl border-b border-white/5">
+      <div id="cartIcon" onclick="toggleCart()" class="pl-4 border-l border-white/20 cursor-pointer"></div> 
+    🛒 <span id="cartCount" class="text-xs">0</span>
+</div>
+        <div class="flex space-x-8 text-[9px] tracking-widest uppercase hidden lg:flex">
+            <a href="#shop" class="link-under">Shop</a>
+            <a href="#process" class="link-under">The Process</a>
+        </div>
+        
+        <div class="text-3xl font-bold tracking-[0.5em] gold-text cursor-pointer">MELU</div>
+        
+        <div class="flex space-x-8 text-[9px] tracking-widest uppercase items-center">
+            <a href="#about" class="link-under hidden lg:block">Journal</a>
+            <a href="#contact" class="link-under">Contact</a>
+            <div class="pl-4 border-l border-white/20">
+                <span class="text-xs">EN</span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen flex flex-col md:flex-row bg-[#050505] overflow-hidden">
+    <div class="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 z-10 bg-[#050505]">
+        <div class="text-left">
+            <span class="text-[10px] tracking-[0.6em] gold-text mb-6 block font-bold">ADDIS ABABA</span>
+            <h1 class="text-5xl md:text-7xl mb-10 tracking-tighter leading-tight">Timeless <br>Ethiopian <br>Craftsmanship</h1>
+            <a href="#shop" class="inline-block border gold-border px-12 py-5 gold-text text-[10px] tracking-[0.4em] uppercase hover:bg-gold hover:text-black transition-all duration-500">Explore Collection</a>
+        </div>
+    </div>
+
+    <div class="w-full md:w-1/2 h-full relative">
+        <img src="hero.jpg" class="w-full h-full object-cover object-top" alt="Melu Collection">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050505] to-transparent hidden md:block"></div>
+    </div>
+</section>
+
+    <section class="section-spacing px-6 md:px-24 bg-white text-black">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <span class="text-[10px] tracking-[0.5em] text-gray-400 mb-8 block font-bold">THE PHILOSOPHY</span>
+                <h2 class="text-5xl md:text-7xl mb-10 leading-tight">More than <br>a Garment.</h2>
+            </div>
+            <div class="reveal" style="transition-delay: 0.3s;">
+                <p class="text-xl font-light leading-relaxed opacity-80 mb-8">
+                    MELU is a tribute to the silent rhythm of the hand-loom. We believe that true luxury is not found in speed, but in the months of dedication required to weave a single <em>Tibeb</em> border. 
+                </p>
+                <p class="text-lg font-light leading-relaxed opacity-60">
+                    Our fusion wear bridges the gap between the majestic traditions of the Ethiopian highlands and the sharp silhouettes of global modernism.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-16 border-b border-white/10 pb-8">
+                <h3 class="text-3xl tracking-widest uppercase font-light">The Reserve</h3>
+                <span class="text-[10px] tracking-[0.3em] gold-text font-bold uppercase">1 of 1 Pieces Available</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="relative group overflow-hidden bg-neutral-900">
+                    <img src="gabi.jpg" class="w-full h-[600px] object-cover opacity-70 group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute bottom-10 left-10">
+                        <h4 class="text-4xl mb-4">The Royal Gabi Coat</h4>
+                        <p class="text-xs tracking-[0.4em] uppercase mb-6">Hand-Spun Cotton & Gold Silk</p>
+                        <a href="#" class="gold-text text-[10px] tracking-[0.4em] uppercase font-bold border-b border-gold pb-2">Acquire Piece</a>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden bg-neutral-900">
+                    <img src="shifon.jpg" class="w-full h-[600px] object-cover opacity-70 group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute bottom-10 left-10">
+                        <h4 class="text-4xl mb-4">Heritage Shifon Veil</h4>
+                        <p class="text-xs tracking-[0.4em] uppercase mb-6">Transparent Elegance & Silver Tibeb</p>
+                        <a href="#" class="gold-text text-[10px] tracking-[0.4em] uppercase font-bold border-b border-gold pb-2">Acquire Piece</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="shop" class="section-spacing px-6 md:px-12">
+    <div class="text-center mb-16">
+  <h2 class="text-4xl tracking-widest uppercase">Categories</h2>
+  <p class="text-[10px] tracking-[0.5em] text-gray-500 uppercase mt-4">
+    Explore the world of MELU
+  </p>
+</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <a href="#women" class="group cursor-pointer block">
+      <div class="overflow-hidden aspect-[3/4] mb-6">
+        <img src="women.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl mb-2">Women</h3>
+        <p class="text-[9px] tracking-[0.5em] text-gray-500 uppercase">Haute Habesha</p>
+      </div>
+    </a>
+
+    <div class="group cursor-pointer">
+      <div class="overflow-hidden aspect-[3/4] mb-6">
+        <img src="men.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl mb-2">Men</h3>
+        <p class="text-[9px] tracking-[0.5em] text-gray-500 uppercase">Modern Nobility</p>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer">
+      <div class="overflow-hidden aspect-[3/4] mb-6">
+        <img src="kaba.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl mb-2">Accessories</h3>
+        <p class="text-[9px] tracking-[0.5em] text-gray-500 uppercase">Woven Accents</p>
+      </div>
+    </div>
+
+    <div class="group cursor-pointer">
+      <div class="overflow-hidden aspect-[3/4] mb-6">
+        <img src="lifestyle.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl mb-2">Lifestyle</h3>
+        <p class="text-[9px] tracking-[0.5em] text-gray-500 uppercase">The Art of Living</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+    
+    <section id="women" class="section-spacing px-6 md:px-12 bg-black">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-5xl mb-16 text-center">Women Collection</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <img src="selam.jpg" class="w-full mb-4">
+                <h3 class="text-xl">Selam Kemis</h3>
+                <p class="text-gray-400">$120</p>
+            </div>
+
+            <div>
+                <img src="gold.jpg" class="w-full mb-4">
+                <h3 class="text-xl">Addis Gold</h3>
+                <p class="text-gray-400">$150</p>
+            </div>
+
+            <div>
+                <img src="heritage.jpg" class="w-full mb-4">
+                <h3 class="text-xl">Heritage Thread</h3>
+                <p class="text-gray-400">$135</p>
+            </div>
+            <!-- 4 -->
+<div>
+  <img src="women4.jpg" class="w-full mb-4 h-[450px] object-cover">
+  <h3 class="text-xl">Abyssinian Silk Flow</h3>
+  <p class="text-gray-400">$175</p>
+</div>
+
+<!-- 5 -->
+<div>
+  <img src="women5.jpg" class="w-full mb-4 h-[450px] object-cover">
+  <h3 class="text-xl">Royal Tibeb Elegance</h3>
+  <p class="text-gray-400">$190</p>
+</div>
+
+<!-- 6 -->
+<div>
+  <img src="women6.jpg" class="w-full mb-4 h-[450px] object-cover">
+  <h3 class="text-xl">Lalibela Evening Dress</h3>
+  <p class="text-gray-400">$210</p>
+</div>
+        </div>
+    </div>
+</section>
+<section id="men" class="section-spacing px-6 md:px-12 bg-black">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-5xl mb-16 text-center">Men Collection</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- 1 -->
+      <div>
+        <img src="men1.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Addis Noir Suit</h3>
+        <p class="text-gray-400">$180</p>
+      </div>
+
+      <!-- 2 -->
+      <div>
+        <img src="men2.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Royal Highland Coat</h3>
+        <p class="text-gray-400">$220</p>
+      </div>
+
+      <!-- 3 -->
+      <div>
+        <img src="men3.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Axum Silk Shirt</h3>
+        <p class="text-gray-400">$140</p>
+      </div>
+
+      <!-- 4 -->
+      <div>
+        <img src="men4.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Lalibela Linen Set</h3>
+        <p class="text-gray-400">$160</p>
+      </div>
+
+      <!-- 5 -->
+      <div>
+        <img src="men5.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Habesha Modern Blazer</h3>
+        <p class="text-gray-400">$200</p>
+      </div>
+
+      <!-- 6 -->
+      <div>
+        <img src="men6.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Sheba Street Elegance</h3>
+        <p class="text-gray-400">$150</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <section id="process" class="py-32 bg-white text-black">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
+            <div class="lg:w-1/3">
+                <h2 class="text-6xl leading-none mb-10">The <br><span class="italic font-light">Art of</span> <br>Tibeb.</h2>
+                <div class="space-y-12">
+                    <div>
+                        <h4 class="text-xs tracking-widest font-bold mb-4">01. THE SPINNING</h4>
+                        <p class="text-sm font-light leading-relaxed opacity-70">Sourcing the finest organic cotton from the southern plains, hand-spun by women who have mastered the craft over generations.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs tracking-widest font-bold mb-4">02. THE DYEING</h4>
+                        <p class="text-sm font-light leading-relaxed opacity-70">Utilizing natural minerals and botanical extracts to achieve the deep golds and earthy creams that define our palette.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs tracking-widest font-bold mb-4">03. THE LOOM</h4>
+                        <p class="text-sm font-light leading-relaxed opacity-70">A rhythmic dance of wood and thread. Each millimeter of a Tibeb border is a mathematical and artistic feat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-2/3 grid grid-cols-2 gap-6">
+                <img src="process1.jpg" class="w-full h-[400px] object-cover">
+                <img src="process2.jpg" class="w-full h-[400px] object-cover mt-20">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-spacing px-6 text-center border-t border-white/5">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-5xl mb-8">Join the Journal</h2>
+            <p class="text-gray-500 font-light mb-12 tracking-wide uppercase text-[10px]">Private updates on new collections and artisan stories.</p>
+            <form class="flex flex-col md:flex-row gap-4">
+                <input type="email" placeholder="YOUR EMAIL ADDRESS" class="flex-1 bg-transparent border-b border-white/20 py-4 px-2 focus:outline-none focus:border-gold transition-all text-[10px] tracking-widest">
+                <button class="px-12 py-4 bg-white text-black text-[10px] tracking-widest uppercase font-bold hover:bg-gold transition-all">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-white text-black pt-32 pb-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-20 mb-32">
+                <div class="col-span-1 md:col-span-1">
+                    <h2 class="text-4xl tracking-[0.4em] mb-8 gold-text">MELU</h2>
+                    <p class="text-xs font-light opacity-60">Addis Ababa's Premier Fashion House. Woven with history, designed for the future.</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] tracking-[0.4em] font-bold mb-8 uppercase">Navigation</h4>
+                    <ul class="space-y-4 text-xs font-light uppercase tracking-widest">
+                        <li><a href="#" class="hover:text-gold transition">Shop All</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Our Story</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Artisan Collective</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Boutique Locations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] tracking-[0.4em] font-bold mb-8 uppercase">Client Care</h4>
+                    <ul class="space-y-4 text-xs font-light uppercase tracking-widest">
+                        <li><a href="#" class="hover:text-gold transition">Custom Orders</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Care Guide</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] tracking-[0.4em] font-bold mb-8 uppercase">Contact</h4>
+                    <p class="text-xs font-light leading-loose uppercase tracking-widest">
+                        Africa Avenue, Bole<br>
+                        Addis Ababa, Ethiopia<br>
+                        +251 911 00 11 22<br>
+                        concierge@melu.com
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-black/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex space-x-12 text-[10px] font-bold tracking-[0.3em]">
+                    <a href="#" class="hover:text-gold transition">INSTAGRAM</a>
+                    <a href="#" class="hover:text-gold transition">PINTEREST</a>
+                    <a href="#" class="hover:text-gold transition">LINKEDIN</a>
+                </div>
+                <p class="text-[9px] tracking-[0.5em] opacity-40 uppercase">&copy; 2026 MELU. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Reveal Animation on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+<div id="productModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+  <div class="bg-white text-black max-w-lg w-full p-8 relative">
+    
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-xl">✕</button>
+
+    <img id="modalImg" class="w-full mb-4 object-cover h-[400px]">
+
+    <h2 id="modalTitle" class="text-2xl mb-2"></h2>
+    <p id="modalPrice" class="mb-6 opacity-70"></p>
+
+    <button onclick="addToCart()" class="bg-black text-white px-6 py-3 w-full tracking-widest uppercase text-xs">
+        Add to Cart
+    </button>
+
+  </div>
+</div>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let currentProduct = {};
+
+function updateCartUI() {
+    document.getElementById("cartCount").innerText = cart.length;
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function openModal(img, title, price) {
+    currentProduct = { img, title, price };
+
+    document.getElementById("modalImg").src = img;
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalPrice").innerText = price;
+
+    document.getElementById("productModal").classList.remove("hidden");
+}
+
+function closeModal() {
+    document.getElementById("productModal").classList.add("hidden");
+}
+
+function addToCart() {
+    cart.push(currentProduct);
+    updateCartUI();
+    closeModal();
+
+    const cartIcon = document.getElementById("cartIcon");
+
+    cartIcon.style.transform = "scale(1.2)";
+
+    setTimeout(() => {
+        cartIcon.style.transform = "scale(1)";
+    }, 200);
+}
+updateCartUI();
+function attachShopClicks() {
+    const items = document.querySelectorAll("#women .grid > div, #men .grid > div");
+
+    items.forEach(item => {
+        item.style.cursor = "pointer";
+
+        item.addEventListener("click", () => {
+            const img = item.querySelector("img")?.src;
+            const title = item.querySelector("h3")?.innerText;
+            const price = item.querySelector("p")?.innerText;
+
+            if (img && title && price) {
+                openModal(img, title, price);
+            }
+        });
+    });
+}
+
+attachShopClicks();
+function toggleCart() {
+    const panel = document.getElementById("cartPanel");
+    panel.classList.toggle("translate-x-full");
+}
+</script>
+<!-- CART SIDEBAR -->
+<div id="cartPanel" class="fixed top-0 right-0 w-[350px] h-full bg-white text-black shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+
+  <div class="p-6 border-b flex justify-between items-center">
+    <h2 class="text-xl font-bold">Your Cart</h2>
+    <button onclick="toggleCart()" class="text-2xl">✕</button>
+  </div>
+
+  <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
+
+  <div class="p-6 border-t">
+    <div class="flex justify-between mb-4">
+      <span class="font-bold">Total</span>
+      <span id="cartTotal">$0</span>
+    </div>
+
+    <button class="w-full bg-black text-white py-3">Checkout</button>
+  </div>
+
+</div>
+</body>
+</html>
