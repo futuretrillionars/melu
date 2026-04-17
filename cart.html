@@ -195,7 +195,9 @@ function () {
 
     let phoneNumber = "251911001122"; // change this
 
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`);
+    const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(msg);
+window.open(url, "_blank");
+
     localStorage.removeItem("cart");
     cart = [];
     renderCart();
