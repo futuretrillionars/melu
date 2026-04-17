@@ -34,10 +34,10 @@
   </div>
 
     <!-- SIZE -->
-    <div>
-      <p class="text-sm text-gray-400 mb-3 tracking-widest">SIZE</p>
+    <div id="sizeSection">
+  <p class="text-sm text-gray-400 mb-3 tracking-widest">SIZE</p>
 
-      <div class="flex gap-3">
+       class="flex gap-3">
         <button class="size-btn border px-4 py-2">S</button>
         <button class="size-btn border px-4 py-2">M</button>
         <button class="size-btn border px-4 py-2">L</button>
@@ -61,21 +61,21 @@
     You might also like
   </h2>
 
-  <div class="grid md:grid-cols-3 gap-8">
+   class="grid md:grid-cols-3 gap-8">
 
-    <div class="group cursor-pointer">
+     class="group cursor-pointer">
       <img src="images/men2.jpg" class="w-full h-[350px] object-cover group-hover:scale-105 transition">
       <p class="mt-4 text-lg">Royal Highland Coat</p>
       <p class="text-gray-400">$220</p>
     </div>
 
-    <div class="group cursor-pointer">
+     class="group cursor-pointer">
       <img src="images/women5.jpg" class="w-full h-[350px] object-cover group-hover:scale-105 transition">
       <p class="mt-4 text-lg">Royal Tibeb Elegance</p>
       <p class="text-gray-400">$190</p>
     </div>
 
-    <div class="group cursor-pointer">
+     class="group cursor-pointer">
       <img src="images/men5.jpg" class="w-full h-[350px] object-cover group-hover:scale-105 transition">
       <p class="mt-4 text-lg">Habesha Modern Blazer</p>
       <p class="text-gray-400">$200</p>
@@ -110,25 +110,11 @@ if (accessoriesKeywords.some(word => product.title.includes(word))) {
     `;
   }
 }
-// One-size accessories (no size needed)
+
 const oneSizeAccessories = ['Netela', 'Gold Set', 'Cross', 'Scarf', 'Bracelet', 'Bag'];
 let isOneSize = oneSizeAccessories.some(word => product.title.includes(word));
 
-if (isAccessory) {
-  document.getElementById("productDescription").innerHTML = "Authentic Ethiopian accessory handcrafted by master artisans. Each piece carries centuries of tradition and cultural significance.";
-  document.getElementById("productFeatures").innerHTML = `
-    <p>• Handmade in Ethiopia</p>
-    <p>• Genuine traditional materials</p>
-    <p>• Ethically sourced</p>
-    <p>• One-of-a-kind piece</p>
-    <p>• Perfect gift for heritage lovers</p>
-  `;
-  
-  // Hide size section for one-size accessories
-  if (isOneSize) {
-    document.getElementById("sizeSection").style.display = "none";
-  }
-}
+
   document.querySelectorAll(".size-btn").forEach(button => {
   button.onclick = () => {
 
