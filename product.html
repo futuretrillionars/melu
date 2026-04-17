@@ -93,9 +93,23 @@ document.getElementById("productImg").src = product.img;
 document.getElementById("productTitle").innerText = product.title;
 document.getElementById("productPrice").innerText = product.price;
   // Check if product is an accessory
+// Check if accessory - if yes, change the description
 const accessoriesKeywords = ['Kaba', 'Gold Set', 'Netela', 'Cross', 'Sandals', 'Scarf', 'Bracelet', 'Hat', 'Bag'];
-let isAccessory = accessoriesKeywords.some(word => product.title.includes(word));
-
+if (accessoriesKeywords.some(word => product.title.includes(word))) {
+  document.getElementById("productDescription").innerHTML = "Authentic Ethiopian accessory handcrafted by master artisans. Each piece carries centuries of tradition and cultural significance.";
+}
+  if (accessoriesKeywords.some(word => product.title.includes(word))) {
+  const featuresDiv = document.querySelector('.space-y-2.text-sm.text-gray-400');
+  if (featuresDiv) {
+    featuresDiv.innerHTML = `
+      <p>✓ Hand-spun Ethiopian cotton / premium materials</p>
+      <p>✓ Traditional artisan craftsmanship</p>
+      <p>✓ Ethically sourced & sustainably made</p>
+      <p>✓ Limited edition piece</p>
+      <p>✓ Handmade in Addis Ababa, Ethiopia</p>
+    `;
+  }
+}
 // One-size accessories (no size needed)
 const oneSizeAccessories = ['Netela', 'Gold Set', 'Cross', 'Scarf', 'Bracelet', 'Bag'];
 let isOneSize = oneSizeAccessories.some(word => product.title.includes(word));
