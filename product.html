@@ -88,6 +88,8 @@
 <script>
 let product = JSON.parse(localStorage.getItem("selectedProduct"));
   let selectedSize = null;
+  let isHair = ['Braids','Cornrows','Silk','Waves','Twist','Wig','Updo','Glam']
+.some(word => product.title.includes(word));
 
 document.getElementById("productImg").src = product.img;
 document.getElementById("productTitle").innerText = product.title;
@@ -109,6 +111,19 @@ if (isAccessory) {
     <p>• One-of-a-kind piece</p>
     <p>• Perfect gift for heritage lovers</p>
   `;
+  if (isHair) {
+  document.getElementById("productDescription").innerHTML =
+    "Premium hair styling service delivered by expert stylists.";
+
+  document.getElementById("productFeatures").innerHTML = `
+    <p>• Professional salon service</p>
+    <p>• High-end styling tools</p>
+    <p>• Custom look design</p>
+    <p>• Appointment-based service</p>
+  `;
+
+  document.getElementById("sizeSection").style.display = "none";
+}
   
   // Hide size section for one-size accessories
   if (isOneSize) {
