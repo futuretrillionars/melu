@@ -235,6 +235,77 @@
         </div>
     </div>
 </section>
+    <section id="shifon" class="section-spacing px-6 md:px-12 bg-black">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-5xl mb-16 text-center">Shifon Collection</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <div>
+        <img src="images/shifon1.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 1</h3>
+        <p class="text-gray-400">$160</p>
+      </div>
+
+      <div>
+        <img src="images/shifon2.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 2</h3>
+        <p class="text-gray-400">$165</p>
+      </div>
+
+      <div>
+        <img src="images/shifon3.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 3</h3>
+        <p class="text-gray-400">$170</p>
+      </div>
+
+      <div>
+        <img src="images/shifon4.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 4</h3>
+        <p class="text-gray-400">$175</p>
+      </div>
+
+      <div>
+        <img src="images/shifon5.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 5</h3>
+        <p class="text-gray-400">$180</p>
+      </div>
+
+      <div>
+        <img src="images/shifon6.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 6</h3>
+        <p class="text-gray-400">$185</p>
+      </div>
+
+      <div>
+        <img src="images/shifon7.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 7</h3>
+        <p class="text-gray-400">$190</p>
+      </div>
+
+      <div>
+        <img src="images/shifon8.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 8</h3>
+        <p class="text-gray-400">$195</p>
+      </div>
+
+      <div>
+        <img src="images/shifon9.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 9</h3>
+        <p class="text-gray-400">$200</p>
+      </div>
+
+      <div>
+        <img src="images/shifon10.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Shifon Elegance 10</h3>
+        <p class="text-gray-400">$210</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 <section id="men" class="section-spacing px-6 md:px-12 bg-black">
   <div class="max-w-7xl mx-auto">
 
@@ -634,9 +705,7 @@ function addToCart() {
 }
 updateCartUI();
 function attachShopClicks() {
-   const items = document.querySelectorAll(
-  "#women .grid > div, #men .grid > div, #accessories .grid > div, #hair .grid > div"
-);
+ const items = document.querySelectorAll("#women .grid > div, #men .grid > div, #accessories .grid > div, #hair .grid > div, #shifon .grid > div");
 
     items.forEach(item => {
         item.style.cursor = "pointer";
