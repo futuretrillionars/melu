@@ -168,7 +168,15 @@
         <p class="text-[9px] tracking-[0.5em] text-gray-500 uppercase">Woven Accents</p>
       </div>
     </div>
-
+<a href="#hair" class="group cursor-pointer block">
+  <div class="overflow-hidden aspect-[3/4] mb-6">
+    <img src="images/hair.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+  </div>
+  <div class="text-center">
+    <h3 class="text-2xl mb-2">Hair</h3>
+    <p class="text-[9px] tracking-[0.5em] text-gray-500 uppercase">Luxury Styling</p>
+  </div>
+</a>
    <div class="group cursor-pointer">
       <div class="overflow-hidden aspect-[3/4] mb-6">
        <img src="images/lifestyle.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
@@ -354,6 +362,101 @@
 
   </div>
 </section>
+    <section id="hair" class="section-spacing px-6 md:px-12 bg-black">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-5xl mb-16 text-center">Hair Services</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- 1 -->
+      <div>
+        <img src="images/hair1.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Signature Braids</h3>
+        <p class="text-gray-400">$80</p>
+      </div>
+
+      <!-- 2 -->
+      <div>
+        <img src="images/hair2.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Luxury Cornrows</h3>
+        <p class="text-gray-400">$70</p>
+      </div>
+
+      <!-- 3 -->
+      <div>
+        <img src="images/hair3.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Silk Press</h3>
+        <p class="text-gray-400">$60</p>
+      </div>
+
+      <!-- 4 -->
+      <div>
+        <img src="images/hair4.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Curly Volume Set</h3>
+        <p class="text-gray-400">$75</p>
+      </div>
+
+      <!-- 5 -->
+      <div>
+        <img src="images/hair5.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Bridal Styling</h3>
+        <p class="text-gray-400">$150</p>
+      </div>
+
+      <!-- 6 -->
+      <div>
+        <img src="images/hair6.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Natural Twist Set</h3>
+        <p class="text-gray-400">$65</p>
+      </div>
+
+      <!-- 7 -->
+      <div>
+        <img src="images/hair7.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">High Bun Styling</h3>
+        <p class="text-gray-400">$50</p>
+      </div>
+
+      <!-- 8 -->
+      <div>
+        <img src="images/hair8.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Soft Waves Finish</h3>
+        <p class="text-gray-400">$55</p>
+      </div>
+
+      <!-- 9 -->
+      <div>
+        <img src="images/hair9.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Full Glam Styling</h3>
+        <p class="text-gray-400">$120</p>
+      </div>
+
+      <!-- 10 -->
+      <div>
+        <img src="images/hair10.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Elegant Updo</h3>
+        <p class="text-gray-400">$90</p>
+      </div>
+
+      <!-- 11 -->
+      <div>
+        <img src="images/hair11.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Protective Style</h3>
+        <p class="text-gray-400">$85</p>
+      </div>
+
+      <!-- 12 -->
+      <div>
+        <img src="images/hair12.jpg" class="w-full mb-4 h-[450px] object-cover">
+        <h3 class="text-xl">Luxury Wig Install</h3>
+        <p class="text-gray-400">$130</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
    <section id="process" class="py-32 bg-black text-white">
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20">
@@ -531,7 +634,9 @@ function addToCart() {
 }
 updateCartUI();
 function attachShopClicks() {
-    const items = document.querySelectorAll("#women .grid > div, #men .grid > div, #accessories .grid > div");
+   const items = document.querySelectorAll(
+  "#women .grid > div, #men .grid > div, #accessories .grid > div, #hair .grid > div"
+);
 
     items.forEach(item => {
         item.style.cursor = "pointer";
